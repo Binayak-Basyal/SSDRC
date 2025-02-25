@@ -1,0 +1,45 @@
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+      <img src="logo.png" alt="SSDRC Logo" class="logo-img" />
+      <span>SSDRC Nepal</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" *ngIf="!isMobileMenuVisible">
+      <li><a routerLink="/home" class="nav-link">Home</a></li>
+      <li><a routerLink="/about" class="nav-link">About Us</a></li>
+      <li><a routerLink="/programs" class="nav-link">Programs</a></li>
+      <li><a routerLink="/success-stories" class="nav-link">Blog</a></li>
+      <!-- <li><a routerLink="/events" class="nav-link">Events</a></li> -->
+      <li><a routerLink="/contact-us" class="nav-link">Contact Us</a></li>
+    </ul>
+
+    <!-- CTA Buttons -->
+    <div class="cta-buttons" *ngIf="!isMobileMenuVisible">
+      <a routerLink="/donate" class="btn donate-btn">Donate</a>
+      <a routerLink="/get-involved" class="btn involved-btn">Get Involved</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuVisible">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuVisible">
+    <a routerLink="/" (click)="toggleMobileMenu()" class="mobile-link">Home</a>
+    <a routerLink="/about" (click)="toggleMobileMenu()" class="mobile-link">About Us</a>
+    <a routerLink="/programs" (click)="toggleMobileMenu()" class="mobile-link">Programs</a>
+    <a routerLink="/success-stories" (click)="toggleMobileMenu()" class="mobile-link">Blog</a>
+    <!-- <a routerLink="/events" (click)="toggleMobileMenu()" class="mobile-link">Events</a> -->
+    <a routerLink="/contact-us" (click)="toggleMobileMenu()" class="mobile-link">Contact Us</a>
+    <a routerLink="/donate" class="btn donate-btn mobile-cta" (click)="toggleMobileMenu()">Donate</a>
+    <a routerLink="/get-involved" class="btn involved-btn mobile-cta" (click)="toggleMobileMenu()">Get Involved</a>
+  </div>
+</nav>
+<router-outlet />

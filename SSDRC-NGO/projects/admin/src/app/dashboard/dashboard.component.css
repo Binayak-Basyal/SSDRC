@@ -1,0 +1,27 @@
+/* dashboard.component.css */
+
+.dashboard-container {
+    display: flex; /* Enable Flexbox layout */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Prevent dashboard container scrollbars */
+  }
+  
+  app-side-bar {
+    height: 100%; /* Sidebar takes full container height */
+    /* Sidebar styling is managed in side-bar.component.css */
+  }
+  
+  .content {
+    flex: 1; /* Content takes remaining space */
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scroll for content */
+    transition: margin-left 0.3s ease; /* Smooth margin transition */
+    margin-left: 260px; /* Initial margin for expanded sidebar (match side-bar.component.css width) */
+  }
+  
+  /* Adjust content margin when dashboard-container has 'collapsed' class */
+  .dashboard-container.collapsed .content {
+    margin-left: 70px; /* Margin for collapsed sidebar (match side-bar.component.css collapsed width) */
+  }

@@ -1,0 +1,28 @@
+<div class="menu-container" [class.collapsed]="isCollapsed">
+  <button class="toggle-button" (click)="toggleMenu()">
+    <i class="fas" [ngClass]="{'fa-chevron-right': isCollapsed, 'fa-chevron-left': !isCollapsed}"></i>
+  </button>
+
+  <div class="menu-content">
+    <div class="logo">
+      <a routerLink="/dashboard" class="menu-item" pointer="crusor" >
+      <img src="logo.png" alt="SSDRC Logo" class="logo-img" />
+    </a>
+      <span *ngIf="!isCollapsed" class="logo-text">SSDRC</span>
+    </div>
+    <nav>
+      <a href="#" class="menu-item">
+        <i class="fas fa-home"></i> <span *ngIf="!isCollapsed">Home</span>
+      </a>
+      <a href="#" class="menu-item" >
+        <i class="fas fa-info-circle"></i> <span *ngIf="!isCollapsed">Blog</span>
+      </a>
+      <a routerLink="/dashboard/employee" class="menu-item" pointer="crusor" >
+        <i class="fas fa-hand-holding-heart"></i> <span *ngIf="!isCollapsed">Employee</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i class="fas fa-envelope"></i> <span *ngIf="!isCollapsed">Member</span>
+      </a>
+    </nav>
+  </div>
+</div>
